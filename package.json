@@ -1,0 +1,19 @@
+{
+  "name": "print-on-burn",
+  "version": "1.0.0",
+  "description": "All the information needed to 3D print an object upon burning the NFT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cherrypopsicle/print-on-burn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cherrypopsicle/print-on-burn/issues"
+  },
+  "homepage": "https://github.com/cherrypopsicle/print-on-burn#readme"
+}
