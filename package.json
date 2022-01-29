@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cherrypopsicle/print-on-burn/issues"
   },
-  "homepage": "https://github.com/cherrypopsicle/print-on-burn#readme"
+  "homepage": "https://github.com/cherrypopsicle/print-on-burn#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
