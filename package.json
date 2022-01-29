@@ -18,6 +18,7 @@
   "homepage": "https://github.com/cherrypopsicle/print-on-burn#readme",
   "dependencies": {
     "@openzeppelin/contracts": "^4.4.2",
+    "ethers": "^5.5.3",
     "express": "^4.17.2",
     "fs": "^0.0.1-security",
     "ganache-cli": "^6.12.2",

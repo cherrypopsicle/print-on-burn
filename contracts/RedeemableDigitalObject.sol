@@ -1,3 +1,4 @@
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -9,11 +10,9 @@ contract Burnable3DObject is Ownable, ERC721 {
     mapping(address => bool) public didBurn;
     uint256 public tokenId = 0;
     string private _ipfsFolder = '';
-    string private _baseURI = '';
     string private _contractURI = '';
     uint256 private _tokenSupply = 10;
 
-    event Minted();
     event Burnt(address indexed burner, string indexed tokenURI);
 
 
@@ -27,6 +26,7 @@ contract Burnable3DObject is Ownable, ERC721 {
     function burn(uint256 id) public {
         require(ownerOf(id) == msg.sender, "Only the owner of the token can burn");
         _burn(id);
+        emit Burnt(msg.sender, '');
     }
 
 
