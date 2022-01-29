@@ -17,6 +17,14 @@
   },
   "homepage": "https://github.com/cherrypopsicle/print-on-burn#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "@openzeppelin/contracts": "^4.4.2",
+    "express": "^4.17.2",
+    "fs": "^0.0.1-security",
+    "ganache-cli": "^6.12.2",
+    "mocha": "^9.2.0",
+    "path": "^0.12.7",
+    "solc": "^0.8.11",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "web3": "^1.7.0"
   }
 }
