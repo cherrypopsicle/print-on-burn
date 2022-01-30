@@ -5,43 +5,49 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract Burnable3DObject is Ownable, ERC721 {
-
     mapping(address => bool) public didMint;
     mapping(address => bool) public didBurn;
-    uint256 public tokenId = 0;
-    string private _ipfsFolder = '';
-    string private _contractURI = '';
+    uint256 public tokenId = 1;
+    string private _base =
+        "ipfs://Qmbs76dNbHAkXEMSmD9B61Q4n2TCriS4gc4djT3m8jup9z";
+    string private _contractURI = "ipfs://Qmbs76dNbHAkXEMSmD9B61Q4n2TCriS4gc4djT3m8jup9z";
     uint256 private _tokenSupply = 10;
 
     event Burnt(address indexed burner, string indexed tokenURI);
+    event Minted();
 
-
-    constructor() ERC721("Stuff To Burn And Print With", "Stuff") {}
+    constructor() ERC721("Flaming Collectible", "FLAME") {}
 
     function mint() public {
         require(tokenId < _tokenSupply, "token supply exceeded!");
-        _mint(msg.sender, tokenId);
+        _mint(msg.sender, tokenId++);
+        emit Minted();
     }
 
     function burn(uint256 id) public {
-        require(ownerOf(id) == msg.sender, "Only the owner of the token can burn");
+        require(
+            ownerOf(id) == msg.sender,
+            "Only the owner of the token can burn"
+        );
         _burn(id);
         emit Burnt(msg.sender, '');
     }
 
-
-    function _setTokenURI(uint256 tokenId, string memory _tokenURI)
-        internal
-        virtual
-    {
-        require(
-            _exists(tokenId),
-            "ERC721URIStorage: URI set of nonexistent token"
-        );
+    // for opensea standards
+    function contractURI() public view returns (string memory) {
+        return _contractURI;
     }
 
     // the overridden _baseURI from ERC721
     function _baseURI() internal view virtual override returns (string memory) {
-        return _ipfsFolder;
+        return _base;
+    }
+
+        /**
+     * @dev See {IERC721Metadata-tokenURI}.
+     */
+    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
+        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
+        return _base;
     }
 }
