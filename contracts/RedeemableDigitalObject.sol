@@ -9,8 +9,8 @@ contract Burnable3DObject is Ownable, ERC721 {
     mapping(address => bool) public didBurn;
     uint256 public tokenId = 1;
     string private _base =
-        "ipfs://Qmbs76dNbHAkXEMSmD9B61Q4n2TCriS4gc4djT3m8jup9z";
-    string private _contractURI = "ipfs://Qmbs76dNbHAkXEMSmD9B61Q4n2TCriS4gc4djT3m8jup9z";
+        "ipfs://QmXDJeEfaZ9YyF73692TsVGicxyGFaFtwxzwcfBRYj6LaV";
+    string private _contractURI = "ipfs://QmXDJeEfaZ9YyF73692TsVGicxyGFaFtwxzwcfBRYj6LaV";
     uint256 private _tokenSupply = 10;
 
     event Burnt(address indexed burner, string indexed tokenURI);

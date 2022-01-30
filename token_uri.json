@@ -1,0 +1,5 @@
+{
+    "name": "ETH collectible",
+    "description": "A collectible ETH coin that can be printed when burnt from Burnable3DObject.sol",
+    "image": "ipfs://QmQJCUJJcpSfXVCxFkT4Pn8sYKyfaubkumft7zJsMdQJfi"
+}
